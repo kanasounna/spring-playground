@@ -1,5 +1,6 @@
 package com.example.springplayground;
 
+import com.example.springplayground.controller.EndPointController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,7 @@ import  static org.springframework.test.web.servlet.request.MockMvcRequestBuilde
 public class EndPointControllerTest {
     @Autowired private MockMvc mockMvc;
     @Test
+
     public void testIndexEndPoint() throws Exception {
         this.mockMvc.perform(get("/").accept(MediaType.TEXT_PLAIN))
                 .andExpect(status().isOk())
