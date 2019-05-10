@@ -1,4 +1,4 @@
-package com.example.springplayground;
+package com.example.springplayground.controller;
 
 import com.example.springplayground.controller.VolumeController;
 import org.junit.Test;
