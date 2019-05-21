@@ -14,12 +14,17 @@ public class WordCounter {
     public Map<String, Integer> count(String string){
         Map<String,Integer> wordCount=new HashMap<>();
         Arrays.asList(string.split(" ")).stream().forEach(elt -> {
-            if(wordCount.get(elt)==null) wordCount.put(elt,1);
-            else{
-                int currentNumber=wordCount.get(elt);
-                wordCount.put(elt,currentNumber+1);
+            String stripedElt="";
+            if(elt.endsWith(",")) {
+                stripedElt = elt.substring(0, elt.length() - 1);
             }
-        });
+            else stripedElt=elt;
+                if(wordCount.get(stripedElt)==null) wordCount.put(stripedElt,1);
+                else{
+                    int currentNumber=wordCount.get(stripedElt);
+                    wordCount.put(stripedElt,currentNumber+1);
+                }
+            });
         return wordCount;
     }
 }
