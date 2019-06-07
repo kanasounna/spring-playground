@@ -17,7 +17,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class EndPointControllerTest {
     @Autowired private MockMvc mockMvc;
     @Test
-
     public void testIndexEndPoint() throws Exception {
         this.mockMvc.perform(get("/").accept(MediaType.TEXT_PLAIN))
                 .andExpect(status().isOk())
